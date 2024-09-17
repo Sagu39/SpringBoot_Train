@@ -5,7 +5,7 @@ package com.example.demo.core.exception;
  * 想定外のシステムエラーを検知した場合にスローする。
  * 基本的に業務処理の継続は不可能で、システムエラー画面へ遷移する。
  */
-public class SystemException extends RunTimeException {
+public class SystemException extends RuntimeException {
     /** メッセージID */
     private String messageId;
     /** フィールド */
@@ -17,9 +17,9 @@ public class SystemException extends RunTimeException {
      * @param field フィールド
      * @param cause 例外
      */
-    public SystemException(String messageId, String field,Throwable cause) {
+    public SystemException(String messageId, String field, Throwable cause) {
         super(cause);
-        this.messageId = messageid;
+        this.messageId = messageId;
         this.field = field;
     }
 
